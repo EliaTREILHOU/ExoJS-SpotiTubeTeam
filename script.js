@@ -83,3 +83,18 @@ for (let count = 0; count < 6; count++) {
 }
 
 // Fonctionnalité 7
+
+let navCardButton1 = document.getElementsByClassName("my-2")[1];
+let cardsPosition = document.getElementsByClassName("row")[1];
+function lastCardGetsFirst() {
+	cardsPosition.insertBefore(cardsPosition.children[5], cardsPosition.children[0]);
+}
+navCardButton1.addEventListener("click", lastCardGetsFirst);
+
+// Fonctionalité 8
+let navCardButton2 = document.getElementsByClassName("my-2")[0];
+function firstCardGetsLast(e) {
+	e.preventDefault();
+	cardsPosition.insertBefore(cardsPosition.children[0], cardsPosition.children[5].nextSibling);
+}
+navCardButton2.addEventListener("click", firstCardGetsLast);
